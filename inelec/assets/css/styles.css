@@ -1,0 +1,98 @@
+/* ==========================================================================
+   INELEC · Hoja de estilos principal
+   Rutas de imágenes relativas a este archivo: ../images/...
+   ========================================================================== */
+
+/* --- Variables y base --------------------------------------------------- */
+:root{--orange:#F58220;--dark:#15171A;--gray:#666;--light:#f5f5f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#15171A}a{text-decoration:none;color:inherit}
+
+/* --- Encabezado --------------------------------------------------------- */
+.header{height:82px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+.logo{display:flex;align-items:center}.logo img{display:block;height:48px;width:auto}
+.nav{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:700}.nav a:hover{color:var(--orange)}.nav-cta{background:var(--orange);color:#fff!important;padding:12px 19px}.menu{display:none;border:0;background:none;font-size:28px;cursor:pointer}
+
+/* --- Elementos comunes -------------------------------------------------- */
+.kicker{color:var(--orange);font-size:11px;letter-spacing:2.5px;font-weight:800;display:block;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;gap:18px;background:var(--orange);color:#fff;padding:14px 22px;font-weight:800;font-size:12px;transition:.25s}.btn:hover{background:#111;transform:translateY(-2px)}
+
+/* --- Banner principal (diseño de index 1) ------------------------------- */
+.banner{position:relative;overflow:hidden;color:#fff;padding:110px 6vw 180px;
+background:#15171A url('../images/backgrounds/hero-camara.png') center/cover no-repeat}
+.banner:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,13,.7),rgba(10,11,13,.15) 60%,transparent)}
+.banner-content{position:relative;z-index:2;max-width:760px}
+.banner h1{font-size:clamp(42px,6vw,76px);line-height:.97;font-weight:900;margin:0;max-width:14ch}
+.banner p{max-width:52ch;color:#c9ccd1;font-size:18px;margin:24px 0 32px}
+.banner-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn-o{background:transparent;border:1.5px solid rgba(255,255,255,.55);padding:12.5px 20.5px}
+.btn-o:hover{background:transparent;border-color:var(--orange);color:var(--orange)}
+.banner .wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px;z-index:1}
+.banner .wave path{fill:none;stroke-width:2;vector-effect:non-scaling-stroke}
+.banner .wave .a{stroke:var(--orange);stroke-dasharray:14 10;animation:flow 6s linear infinite}
+.banner .wave .b{stroke:#fff;opacity:.3;stroke-dasharray:4 12;animation:flow 9s linear infinite reverse}
+@keyframes flow{to{stroke-dashoffset:-240}}
+@media(prefers-reduced-motion:reduce){.banner .wave path{animation:none}}
+
+/* --- Soluciones --------------------------------------------------------- */
+.section{padding:90px 5vw;text-align:center}.heading{max-width:900px;margin:0 auto 45px}.heading h2{font-size:clamp(32px,4vw,50px);line-height:1.04;margin:0 0 14px;font-weight:900}.heading h2 em{color:var(--orange);font-style:normal}.heading p{font-size:17px;color:var(--gray);max-width:720px;margin:auto}
+.solutions{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}.solution{border:1px solid #e6e6e6;background:#fff;transition:.3s;overflow:hidden}.solution:hover{transform:translateY(-7px);box-shadow:0 18px 38px rgba(0,0,0,.12)}.solution-visual{height:205px;background:linear-gradient(135deg,#292929,#555);position:relative;overflow:hidden}.solution-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 55%,rgba(245,130,32,.8) 56%,rgba(245,130,32,.8) 59%,transparent 60%)}.solution-icon{position:absolute;left:22px;bottom:18px;color:#fff;font-size:36px;font-weight:900;z-index:2}.solution-body{padding:20px 22px 25px;min-height:185px;position:relative}.solution-body h3{font-size:20px;margin:5px 30px 7px 0}.solution-body p{font-size:14px;color:var(--gray);margin:0;max-width:320px}.arrow{position:absolute;right:20px;bottom:20px;font-size:25px;color:var(--orange)}
+
+/* --- Quiénes somos y misión --------------------------------------------- */
+.about{min-height:520px;background:linear-gradient(90deg,rgba(15,16,18,.98),rgba(15,16,18,.78)),linear-gradient(135deg,#242424,#555);display:flex;align-items:center;color:#fff;padding:80px 6vw;position:relative;overflow:hidden}.about:after{content:"INELEC";position:absolute;right:-30px;bottom:-45px;font-size:150px;font-weight:900;color:rgba(245,130,32,.12)}.about>div{max-width:670px;position:relative;z-index:2}.about h2{font-size:clamp(40px,5vw,64px);line-height:1;margin:0 0 24px}.about p{font-size:17px;color:#e0e0e0;margin-bottom:30px}
+.mission{display:grid;grid-template-columns:1fr 1fr;padding:55px 8vw;background:#fafafa}.mission>div{padding:10px 45px}.mission>div+div{border-left:1px solid #ddd}.mission-icon{font-size:40px;color:var(--orange)}.mission h3{font-size:17px;margin:5px 0}.mission p{color:var(--gray);margin:0}
+
+/* --- Proyectos ---------------------------------------------------------- */
+/* Las fotos se cargan desde la biblioteca de medios del sitio (wp-content/uploads) */
+#proyectos.pj{background:var(--dark);color:#fff;padding:100px 5vw;position:relative;overflow:hidden}
+#proyectos.pj:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 0%,rgba(245,130,32,.18),transparent 45%),repeating-linear-gradient(-25deg,transparent 0 22px,rgba(255,255,255,.025) 23px 24px);pointer-events:none}
+#proyectos .pj-head,#proyectos .pj-grid{position:relative;max-width:1250px;margin-left:auto;margin-right:auto}
+#proyectos .pj-head{margin-bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;text-align:left}
+#proyectos .pj-head h2{font-size:clamp(32px,4vw,52px);line-height:1.04;margin:0;font-weight:900;color:#fff}
+#proyectos .pj-head h2 em{color:var(--orange);font-style:normal}
+#proyectos .pj-head p{max-width:380px;margin:0;color:#a9adb3;font-size:16px;line-height:1.6}
+#proyectos .pj-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:repeat(2,minmax(280px,auto));gap:18px;text-align:left}
+
+#proyectos .pj-card{position:relative;display:block;overflow:hidden;min-height:280px;color:#fff;background:#24272b;isolation:isolate}
+#proyectos .pj-feature{grid-row:span 2}
+#proyectos .pj-img{position:absolute;inset:0;background:linear-gradient(135deg,#ffffff,#ffffff) center/cover no-repeat;transition:transform .7s ease}
+#proyectos .pj-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,14,16,.05) 20%,rgba(13,14,16,.6) 55%,rgba(13,14,16,.95));z-index:1;transition:background .4s}
+#proyectos .pj-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);z-index:3;transform:scaleY(0);transform-origin:bottom;transition:transform .4s}
+#proyectos .pj-card:hover .pj-img{transform:scale(1.07)}
+#proyectos .pj-card:hover:before{transform:scaleY(1)}
+#proyectos .pj-over{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px}
+#proyectos .pj-tag{display:block;font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+#proyectos .pj-over h3{font-size:26px;line-height:1.1;margin:0;font-weight:900}
+#proyectos .pj-feature .pj-over{padding:34px}
+#proyectos .pj-feature .pj-over h3{font-size:clamp(34px,3.6vw,48px)}
+#proyectos .pj-over p{font-size:14px;line-height:1.55;color:#d4d6d9;margin:10px 0 0;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s,opacity .35s}
+#proyectos .pj-card:hover p,#proyectos .pj-card:focus-visible p,#proyectos .pj-feature p{max-height:120px;opacity:1}
+#proyectos .pj-feature p{max-width:440px;font-size:15px}
+#proyectos .pj-chips{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+#proyectos .pj-chips li{font-size:11px;font-weight:700;padding:5px 10px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);backdrop-filter:blur(4px)}
+
+#proyectos .pj-more{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;min-height:280px;background:var(--orange);color:var(--dark);overflow:hidden;transition:background .3s}
+#proyectos .pj-more:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border:2px solid rgba(21,23,26,.18);border-radius:50%;box-shadow:0 0 0 30px rgba(21,23,26,.06),0 0 0 60px rgba(21,23,26,.04);transition:transform .6s}
+#proyectos .pj-more:hover{background:#ff9640}
+#proyectos .pj-more:hover:before{transform:scale(1.15)}
+#proyectos .pj-more-n{font-size:72px;font-weight:900;line-height:.9;position:relative}
+#proyectos .pj-more-t{font-size:22px;font-weight:900;margin-top:4px;position:relative}
+#proyectos .pj-more-l{font-size:13px;font-weight:700;opacity:.75;margin-top:8px;position:relative}
+#proyectos .pj-more-b{margin-top:22px;padding-top:16px;border-top:1.5px solid rgba(21,23,26,.25);font-size:12px;font-weight:800;letter-spacing:.6px;display:flex;justify-content:space-between;align-items:center;position:relative}
+#proyectos .pj-more-b b{font-size:22px;transition:transform .3s}
+#proyectos .pj-more:hover .pj-more-b b{transform:translateX(6px)}
+#proyectos a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media(hover:none){#proyectos .pj-over p{max-height:120px;opacity:1}}
+@media(prefers-reduced-motion:reduce){#proyectos *,#proyectos *:before,#proyectos *:after{transition:none!important}}
+
+/* --- Experiencia -------------------------------------------------------- */
+.experience{padding:80px 5vw;background:var(--light);text-align:center}.stats{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ddd;border-bottom:1px solid #ddd}.stats div{padding:30px 15px}.stats div+div{border-left:1px solid #ddd}.stats strong{display:block;color:var(--orange);font-size:28px;font-weight:900}.stats span{color:#555}
+
+/* --- Contacto ----------------------------------------------------------- */
+.cta{min-height:400px;background:linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.45)),linear-gradient(135deg,#292929,#666);color:#fff;display:flex;align-items:center;padding:70px 7vw}.cta>div{max-width:650px}.cta h2{font-size:clamp(40px,5vw,65px);line-height:1;margin:0 0 15px;color:var(--orange)}.cta p{font-size:17px;color:#eee;margin:0 0 28px}
+
+/* --- Pie ---------------------------------------------------------------- */
+.footer{display:grid;grid-template-columns:1fr 2fr 1.2fr;gap:40px;padding:48px 6vw;background:#fff;border-top:1px solid #eee}.footer-brand strong{font-size:30px;display:block}.footer-brand small{font-size:9px;letter-spacing:5px;color:var(--orange)}.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-content:flex-start}.footer-links a:hover{color:var(--orange)}.footer-contact{display:flex;flex-direction:column;gap:5px;color:#666;font-size:13px}.footer-contact strong{color:#111;font-size:16px}.copyright{padding:15px 6vw;font-size:11px;color:#777;border-top:1px solid #eee}
+
+/* --- Responsive --------------------------------------------------------- */
+@media(max-width:900px){.nav{display:none;position:absolute;top:82px;left:0;right:0;background:#fff;padding:22px;flex-direction:column;align-items:flex-start;box-shadow:0 15px 25px rgba(0,0,0,.1)}.nav.open{display:flex}.menu{display:block}.banner{padding:70px 7vw 140px}.solutions{grid-template-columns:repeat(2,1fr)}#proyectos .pj-head{flex-direction:column;align-items:flex-start;gap:16px}#proyectos .pj-grid{grid-template-columns:1fr 1fr;grid-template-rows:none}#proyectos .pj-feature{grid-column:1/-1;grid-row:auto;min-height:380px}.mission{padding:45px 5vw}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(3),.stats div:nth-child(4){border-top:1px solid #ddd}}
+@media(max-width:600px){.header{height:72px}.nav{top:72px}.logo img{height:36px}.banner h1{font-size:40px}.banner p{font-size:15px}.section{padding:65px 20px}.solutions{grid-template-columns:1fr}#proyectos.pj{padding:65px 20px}#proyectos .pj-grid{grid-template-columns:1fr}#proyectos .pj-feature{min-height:340px}#proyectos .pj-feature .pj-over{padding:24px}.mission{grid-template-columns:1fr;padding:25px 20px}.mission>div{padding:25px 10px}.mission>div+div{border-left:0;border-top:1px solid #ddd}.stats{grid-template-columns:1fr}.stats div+div{border-left:0;border-top:1px solid #ddd}.footer{grid-template-columns:1fr;padding:40px 25px}}
